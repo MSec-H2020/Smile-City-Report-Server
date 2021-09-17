@@ -1,0 +1,2 @@
+class AwareDevice < ApplicationRecord
+end

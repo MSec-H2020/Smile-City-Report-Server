@@ -1,0 +1,2 @@
+class SmileReport < ApplicationRecord
+end

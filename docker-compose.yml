@@ -1,0 +1,27 @@
+version: '3'
+services:
+  mysql:
+    container_name: smilex-db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: smilex-development
+    ports:
+      - "3306:3306"
+  web:
+    container_name: smilex-server
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    command: ["server", "-b", "0.0.0.0"]
+    environment:
+      - "TZ=Japan"
+      - "RAILS_ENV=development"
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app

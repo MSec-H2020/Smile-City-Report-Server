@@ -8,7 +8,7 @@ This system can receive/analyze and store 'smile data' on the database.
 
 And Smile-X uses this to process login, so you need this.
 
-# Branches
+## Branches
 branches split the different situations.
 
 masterはgymappブランチ
